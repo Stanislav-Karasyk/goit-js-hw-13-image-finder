@@ -5,5 +5,6 @@ export default function apiService(searchQuery, pageNumber = 1) {
   const pixabayApiUrl = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${searchQuery}&page=${pageNumber}&per_page=12&key=${keyApi}`;
   return fetch(pixabayApiUrl)
     .then((res) => res.json())
-    .then(galleryMarkap);
+    .then(galleryMarkap)
+    .catch((err) => console.log(err));
 }
